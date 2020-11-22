@@ -1,0 +1,29 @@
+FEATURE:
+I want to determine the age I will retire based on the year
+
+@validYear
+Scenario Outline: The user enters a valid birth year
+	Given the user has entered a valid <birth_month>
+	When the user enters a valid <birth_year>
+	Then the full retirement age is <nra>
+
+	Examples: Years
+		| birth_year | nra               |
+		| 1900	     | 65                |
+		| 1937	     | 65                |
+		| 1938	     | 65 and 2 months   |
+		| 1939	     | 65 and 4 months   |
+		| 1940	     | 65 and 6 months   |
+		| 1941	     | 65 and 8 months   |
+		| 1942	     | 65 and 10 months  |
+		| 1943	     | 66                |
+		| 1954	     | 66                |
+		| 1955	     | 66 and 2 months   |
+		| 1956	     | 66 and 4  months  |
+		| 1957	     | 66 and 6  months  |
+		| 1958	     | 66 and 8  months  |
+		| 1959	     | 66 and 10 months  |
+		| 1960	     | 67                |
+		| 2999	     | 67                |
+
+
